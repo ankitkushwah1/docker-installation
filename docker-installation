@@ -22,5 +22,44 @@ docker pull hello-world
 docker rmi hello-world
 //IMAGE REMOVE FORCEFULLY BY -f TAG
 docker rm -f hello-world
-
-
+// CREATE A CONTAINER ON OUR MACHINE BY hello-world IMAGE \
+docker run --name firts-container hello-world
+// CREATE A CONTAINER ON OUR MACHINE BY centos IMAGE \
+docker run --name c1 centos
+//TO SEE ACTIVE CONTAINER
+docker ps
+//TO SEE ALL  CONTAINER
+docker ps -a
+// TO HELP IN DOCKER 
+docker run --help
+//MAKE CONTAINER IN INTRACTIVE AND TERMINAL SHELL
+docker run --name c2 -it centos bash
+//VIM INSTALL IN CONTAINER 
+yum install vim
+// TO SEE FREE SPACE IN OUR MACHINE 
+free -h
+//TO MOVE OUTSIDE OUR CONTAINER 
+ctrl+p ctrl+q
+// TO SEE LIVE RESOURCES OF OUR CONTAINER 
+docker stats
+//To quite the docker stats OR to stop docker stats
+ctlr+z
+// TO set hostname our container in docker run
+docker run ---name c3 --hostname server.example.com -it ubuntu bash
+// TO SEE operating sysytem in container
+cat /etc/os-release
+//there is no kernal in container there is used our vm kernal
+// update our ubuntu machine 
+apt update
+// upgrade our ubuntu machine 
+apt upgrade
+// VIM install in ubuntu container
+apt install vim
+//greb in help
+docker run --help |grep mem
+// To check the information of conainer
+docker inspect c1
+// executing a exiting container 
+docker exec -it c1 bash
+// to check libaries of command are available 
+ls /sbin
