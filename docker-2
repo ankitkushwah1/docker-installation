@@ -1,0 +1,17 @@
+// Show all process of our machine 
+top
+// Remove all Stop container 
+docker rm $(docker ps -a -q)
+//container run in backround or detached mode 
+docker run --name c1 -itd ubuntu 
+//check proces in container 
+docker top c2
+// Atach our container (/bin/bash)
+docker attach c1
+// Docker container having JEOS means just enaough operating system
+//container make by httpd image and run in deaatached mode 
+docker run --name web1 -d httpd
+//execute our container 
+docker exec -it 
+// httpd         /var/www/html
+// appache2      /usr/local/apache2/htdocs
